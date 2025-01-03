@@ -1,7 +1,6 @@
 # JavaScript Revise
 
 
-# Project Structure
 
 ```plaintext
 JavaScript Data Types
