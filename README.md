@@ -1,6 +1,7 @@
 # JavaScript Revise
 
 
+# Project Structure
 
 ```plaintext
 JavaScript Data Types
@@ -369,24 +370,24 @@ Mongoose (MongoDB ODM)
 
 --------------------------------------------------------------------------------------------------
 HTTP Response Status Codes
-    ├── 1xx (Informational)              // Informational responses
+    ├── 1xx (Informational)(CSP)              // Informational responses
     │       ├── 100 Continue            // Request received, continue with the process
     │       ├── 101 Switching Protocols // Server is switching protocols as requested
     │       └── 102 Processing          // Request is being processed, but no response yet
-    ├── 2xx (Successful)                 // Successful responses
+    ├── 2xx (Successful)(OCANR)                // Successful responses
     │       ├── 200 OK                  // The request was successful
     │       ├── 201 Created             // The request was successful, and a resource was created
     │       ├── 202 Accepted            // The request has been accepted for processing, but not yet completed
     │       ├── 204 No Content          // The request was successful, but there is no content to return
     │       └── 205 Reset Content       // The request was successful, and the client should reset the document view
-    ├── 3xx (Redirection)                // Redirection responses
+    ├── 3xx (Redirection)(M2FSNT)                // Redirection responses
     │       ├── 300 Multiple Choices    // Multiple options for the resource, user must choose one
     │       ├── 301 Moved Permanently   // The resource has been permanently moved to a new URL
     │       ├── 302 Found               // The resource is temporarily moved to a different URL
     │       ├── 303 See Other           // The response can be found under a different URL using GET
     │       ├── 304 Not Modified        // The resource has not been modified since the last request
     │       └── 307 Temporary Redirect  // Temporary redirection to a different URL
-    ├── 4xx (Client Error)               // Client-side errors (user's fault)
+    ├── 4xx (Client Error)(BUFNMRT)               // Client-side errors (user's fault)
     │       ├── 400 Bad Request         // The server cannot process the request due to client error
     │       ├── 401 Unauthorized        // The request requires authentication
     │       ├── 403 Forbidden           // The server understands the request, but refuses to authorize it
@@ -402,6 +403,3 @@ HTTP Response Status Codes
     │       └── 504 Gateway Timeout     // The server, acting as a gateway, did not receive a timely response from an upstream server
 
 --------------------------------------------------------------------------------------------------
-
-
-
