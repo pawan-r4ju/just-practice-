@@ -1,8 +1,5 @@
 # JavaScript Revise
 
-
-# Project Structure
-
 ```plaintext
 JavaScript Data Types
     ├── Primitive Data Types       # Basic types, not objects
