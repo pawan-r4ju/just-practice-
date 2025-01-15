@@ -146,6 +146,7 @@ function fibonacci(num) {
 }
 console.log(fibonacci(5));
 ```
+
 #### Series using loop
 
 ```bash
@@ -163,24 +164,47 @@ function fibonacci(n) {
 #### Example Execution for `fibonacci(5)`:
 
 1.  **Initialization:**
-    -   `n1 = 0`
 
-    -   `n2 = 1`
+    - `n1 = 0`
+
+    - `n2 = 1`
+
 2.  **Iteration 2:**
-    -   `next = n1 + n2 = 0 + 1 = 1`
-    -   `n1 = n2 = 1`
-    -   `n2 = next = 1`
+    - `next = n1 + n2 = 0 + 1 = 1`
+    - `n1 = n2 = 1`
+    - `n2 = next = 1`
 3.  **Iteration 3:**
-    -   `next = n1 + n2 = 1 + 1 = 2`
-    -   `n1 = n2 = 1`
-    -   `n2 = next = 2`
+    - `next = n1 + n2 = 1 + 1 = 2`
+    - `n1 = n2 = 1`
+    - `n2 = next = 2`
 4.  **Iteration 4:**
-    -   `next = n1 + n2 = 1 + 2 = 3`
-    -   `n1 = n2 = 2`
-    -   `n2 = next = 3`
-5.  **Iteration 5:**
-    -   `next = n1 + n2 = 2 + 3 = 5`
-    -   `n1 = n2 = 3`
-    -   `n2 = next = 5`
-**Return:**
--   The function returns `n2`, which is `5`.
+    - `next = n1 + n2 = 1 + 2 = 3`
+    - `n1 = n2 = 2`
+    - `n2 = next = 3`
+5.  **Iteration 5:** - `next = n1 + n2 = 2 + 3 = 5` - `n1 = n2 = 3` - `n2 = next = 5`
+    **Return:**
+
+- The function returns `n2`, which is `5`.
+
+### **Median of Array**
+
+**Write a function that returns median of array.**
+Example:
+
+```bash
+  arr = [1,2,3,4,5,6]
+```
+
+Answer:
+
+```bash
+function median(arr) {
+  let res = 0;
+  for (let i = 0; i < arr.length; i++) {
+    res = res + arr[i];
+  }
+  return res / arr.length;
+}
+console.log(median([1,2,3,4,5,6]));
+
+```
