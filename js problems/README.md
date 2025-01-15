@@ -208,3 +208,50 @@ function median(arr) {
 console.log(median([1,2,3,4,5,6]));
 
 ```
+
+### **power of number**
+
+**Write a function that returns power of number.**
+Example:
+
+```bash
+  power(2,3)//8
+```
+
+Answer:
+
+```bash
+function power(num,exp) {
+  return num ** exp
+}
+console.log(power(2,3));
+
+
+```
+
+### **Anagram**
+
+**Write a function that returns strings are anagram or not.**
+Example:
+
+```bash
+ console.log(anagram( "listen", "silent"));//true
+```
+
+Answer:
+
+```bash
+function anagram(s1, s2) {
+  if (s1.length != s2.length) {
+    return false;
+  }
+  for (let i = 0; i < s1.length; i++) {
+    if (!s2.includes(s1[i])) {
+      return false;
+    }
+    return true;
+  }
+  return true;
+}
+
+```
