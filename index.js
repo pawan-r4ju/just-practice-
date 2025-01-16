@@ -1,13 +1,20 @@
-function isPerfectSquare(num) {
-  if (num < 0) {
-    return false;
+function firstNonRepeatingCharacter(str) {
+  let char_count = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in char_count) {
+      char_count[str[i]]++;
+    } else {
+      char_count[str[i]] = 1;
+    }
   }
-  let i = 0;
-  while (i * i < num) {
-    i++;
+  for (let i = 0; i < str.length; i++) {
+    if (char_count[str[i]] === 1) {
+      return str[i];
+    }
   }
-  return i * i === num;
+  return null;
 }
 
-console.log(isPerfectSquare(16)); // True
-console.log(isPerfectSquare(7)); // False
+console.log(firstNonRepeatingCharacter("leetcode")); // Output: "l"
+console.log(firstNonRepeatingCharacter("aabbcc")); // Output: null
+console.log(firstNonRepeatingCharacter("swiss")); // Output: "w"

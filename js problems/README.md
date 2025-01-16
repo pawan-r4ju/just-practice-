@@ -255,3 +255,168 @@ function anagram(s1, s2) {
 }
 
 ```
+
+### **Anagram**
+
+**Write a function that returns perfect squere or not.**
+Example:
+
+```bash
+ console.log(isPerfectSquare(16)); // True
+```
+
+Answer:
+
+```bash
+function isPerfectSquare(num) {
+  if (num < 0) {
+    return false;
+  }
+  let i = 0;
+  while (i * i < num) {
+    i++;
+  }
+  return i * i === num;
+}
+
+```
+
+### **Reverse a String**
+
+**Write a function that takes a string as input and returns the reversed string.**
+Example:
+
+```bash
+ console.log(reverseString("hello")); // Output: "olleh"
+```
+
+Answer:
+
+```bash
+function reverseString(str) {
+  let reversedStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr = reversedStr + str[i];
+  }
+  return reversedStr
+}
+console.log(reverseString('hello'));
+
+
+```
+
+### ** Find the Missing Number**
+
+**Given an array of n distinct numbers taken from 0, 1, 2, ..., n, find the missing number.**
+Example:
+
+
+```bash
+console.log(findMissingNumber([3, 0, 1])); // Output: 2
+console.log(findMissingNumber([9,6,4,2,3,5,7,0,1])); // Output: 8
+```
+
+Answer:
+
+```bash
+function findMissingNumber(arr) {
+  let missing_arr = [];
+  for (let i = 0; i <= arr.length; i++) {
+    if (!arr.includes(i)) {
+      missing_arr.push(i);
+    }
+  }
+  return missing_arr
+}
+
+```
+
+### **Check if a String is a Palindrome**
+
+**Write a function that checks if a given string is a palindrome (same forward and backward, ignoring case and non-alphanumeric characters).**
+
+Example:
+
+
+```bash
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello")); // Output: false
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // Output: false
+```
+
+Answer:
+
+```bash
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  let comparison_str = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    comparison_str = comparison_str + str[i];
+  }
+
+  if (comparison_str == str) {
+    return true;
+  }
+  return false;
+}
+```
+
+### **Find the First Non-Repeating Character**
+
+**Given a string, find the first character that does not repeat and return it. If all characters repeat, return null.**
+Example:
+
+
+```bash
+console.log(firstNonRepeatingCharacter("leetcode")); // Output: "l"
+console.log(firstNonRepeatingCharacter("aabbcc")); // Output: null
+console.log(firstNonRepeatingCharacter("swiss")); // Output: "w"
+```
+
+Answer:
+
+```bash
+function firstNonRepeatingCharacter(str) {
+  let char_count = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in char_count) {
+      char_count[str[i]]++;
+    } else {
+      char_count[str[i]] = 1;
+    }
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (char_count[str[i]] === 1) {
+      return str[i];
+    }
+  }
+  return null;
+}
+```
+
+### **Flatten a Nested Array**
+
+**Write a function that takes a nested array and flattens it into a single-level array.**
+Example:
+
+
+```bash
+console.log(flattenArray([1, [2, [3, 4], 5], 6])); 
+// Output: [1, 2, 3, 4, 5, 6]
+```
+
+Answer:
+
+```bash
+function flattenArray(arr) {
+  let flatten_arr = [];
+  for (let elem of arr) {
+    if (!Array.isArray(elem)) {
+      flatten_arr.push(elem);
+    } else {
+      flatten_arr = flatten_arr.concat(flattenArray(elem));
+    }
+  }
+  return flatten_arr;
+}
+```
