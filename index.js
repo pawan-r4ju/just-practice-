@@ -1,20 +1,8 @@
-function firstNonRepeatingCharacter(str) {
-  let char_count = {};
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] in char_count) {
-      char_count[str[i]]++;
-    } else {
-      char_count[str[i]] = 1;
-    }
+function sumArray(arr) {
+  let res = 0;
+  for (let elem of arr) {
+    res = res + elem;
   }
-  for (let i = 0; i < str.length; i++) {
-    if (char_count[str[i]] === 1) {
-      return str[i];
-    }
-  }
-  return null;
+  return res;
 }
-
-console.log(firstNonRepeatingCharacter("leetcode")); // Output: "l"
-console.log(firstNonRepeatingCharacter("aabbcc")); // Output: null
-console.log(firstNonRepeatingCharacter("swiss")); // Output: "w"
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15

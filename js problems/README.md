@@ -420,3 +420,126 @@ function flattenArray(arr) {
   return flatten_arr;
 }
 ```
+### **Count the Number of Vowels in a String**
+
+**Write a function to count the number of vowels (a, e, i, o, u) in a given string.**
+Example:
+
+
+```bash
+console.log(countVowels("hello")); // Output: 2
+console.log(countVowels("javascript")); // Output: 3
+```
+
+Answer:
+
+```bash
+function countVowels(str) {
+  const ovels = new Set (["a", "e", "i", "o", "u"]);
+  str = str.toLowerCase();
+  let count = 0;
+  for (let char of str) {
+    if (ovels.has(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+```
+
+### **Find the Largest Number in an Array**
+
+**Write a function that returns the largest number in an array.**
+Example:
+
+
+```bash
+console.log(findMax([3, 7, 1, 9, 5])); // Output: 9
+```
+
+Answer:
+
+```bash
+function findMax(arr) {
+  let large_num = 0;
+  for (let elem of arr) {
+    if (elem > large_num) {
+      large_num = elem;
+    }
+  }
+  return large_num;
+}
+```
+
+### **Check if a Number is Prime**
+
+**Write a function to check if a number is prime.**
+Example:
+
+
+```bash
+console.log(isPrime(7)); // Output: true
+console.log(isPrime(10)); // Output: false
+```
+
+Answer:
+
+```bash
+function isPrime(num) {
+  if (num <= 1) {
+    return num;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+```
+
+### **Remove Duplicates from an Array**
+
+**Write a function that removes duplicate values from an array.**
+Example:
+
+
+```bash
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+```
+
+Answer:
+
+```bash
+function removeDuplicates(arr) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!res.includes(arr[i])) {
+      res.push(arr[i]);
+    }
+  }
+  return res;
+}
+```
+
+### **Find the Sum of All Numbers in an Array**
+
+**Write a function to calculate the sum of all numbers in an array.**
+Example:
+
+
+```bash
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+```
+
+Answer:
+
+```bash
+function sumArray(arr) {
+  let res = 0;
+  for (let elem of arr) {
+    res = res + elem;
+  }
+  return res;
+}
+```
