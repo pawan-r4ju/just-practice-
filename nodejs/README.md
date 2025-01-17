@@ -52,18 +52,38 @@ function copy_file(source, destination) {
 copy_file('./sample.txt','./copy_sample.txt')
 ```
 
-### ****
+### ** REST API**
 
-****
-
-Example:
-
-```bash 
-```
+**most used are get post delete**
 
 Answer:
 
 ```bash
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+let todos = [];
+
+app.get('/todos', (req, res) => {
+    res.json(todos);
+});
+
+app.post('/todos', (req, res) => {
+    const todo = req.body;
+    todos.push(todo);
+    res.status(201).json(todo);
+});
+
+app.delete('/todos/:id', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    todos = todos.filter(todo => todo.id !== id);
+    res.status(204).send();
+});
+
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});
 
 ```
 
