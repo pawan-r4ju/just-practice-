@@ -543,3 +543,142 @@ function sumArray(arr) {
   return res;
 }
 ```
+
+### **Find the GCD (Greatest Common Divisor) of Two Numbers**
+
+**Write a function that returns the greatest common divisor (GCD) of two numbers.**
+Example:
+
+
+```bash
+console.log(gcd(48, 18)); // Output: 6
+```
+
+Answer:
+
+```bash
+function gcd(num1, num2) {
+  let GCD;
+  let minimum;
+  if (num1 < num2) {
+    minimum = num1;
+  } else {
+    minimum = num2;
+  }
+  for (let i = 1; i <= minimum; i++) {
+    if (num1 % i == 0 && num2 % i == 0) {
+      GCD = i;
+    }
+  }
+  return GCD
+}
+```
+
+### **Check if a Number is an Armstrong Number**
+
+**Write a function to check if a given number is an Armstrong number.Write a function to check if a given number is an Armstrong number.(An Armstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.)**
+
+Example:
+
+
+```bash
+console.log(isArmstrong(153)); // Output: true
+console.log(isArmstrong(123)); // Output: false
+
+```
+
+Answer:
+
+```bash
+function isArmstrong(num) {
+  let countNum = num;
+  let count = 0;
+  let result = 0;
+  while (countNum > 0) {
+    countNum = (countNum - (countNum % 10)) / 10;
+    count++;
+  }
+  while (num > 0) {
+    let digit = num % 10;
+    result = result + digit ** count;
+    num = (num - digit) / 10;
+  }
+  if (result === 153) {
+    return true;
+  }
+  return false;
+}
+```
+
+### **Find the Intersection of Two Arrays.**
+
+**Write a function that returns an array of common elements between two given arrays.**
+Example:
+
+
+```bash
+console.log(intersection([1, 2, 3, 4], [3, 4, 5, 6])); // Output: [3, 4]
+
+```
+
+Answer:
+```bash
+function intersection(arr1, arr2) {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] == arr2[j]) {
+        result.push(arr1[i]);
+      }
+    }
+  }
+  return result;
+}
+```
+
+### **Convert a Roman Numeral to an Integer**
+
+**Write a function that converts a given Roman numeral string into an integer.**
+Example:
+
+
+```bash
+console.log(romanToInteger("XIV")); // Output: 14
+console.log(romanToInteger("IX")); // Output: 9
+
+```
+
+Answer:
+
+```bash
+function romanToInteger(roman) {
+  const values = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let total = 0;
+
+  for (let i = 0; i < roman.length; i++) {
+      let current = values[roman[i]];
+      let next = values[roman[i + 1]];
+
+      total = total + (current < next ? -current : current)
+  }
+
+  return total;
+}
+```
+
+### **Generate All Permutations of a Given String**
+
+**Write a function that returns all possible permutations of a given string.**
+Example:
+
+
+```bash
+console.log(permutations("abc")); 
+// Output: ["abc", "acb", "bac", "bca", "cab", "cba"]
+```
+
+Answer:
+
+```bash
+
+```

@@ -1,8 +1,7 @@
-function sumArray(arr) {
-  let res = 0;
-  for (let elem of arr) {
-    res = res + elem;
-  }
-  return res;
+function permutations(str){
+  let splitted_str = str.split('')
+
 }
-console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+
+console.log(permutations("abc")); 
+// Output: ["abc", "acb", "bac", "bca", "cab", "cba"]
