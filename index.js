@@ -3,7 +3,9 @@ function permutations(str){
   let result = []
   for(let elem1 of splitted_str){
     for(let elem2 of splitted_str){
-      if(splitted_str)
+      if(splitted_str){
+        
+      }
     }
     
   }
