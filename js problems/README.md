@@ -698,3 +698,204 @@ function permutations(str) {
 
 console.log(permutations("abc"));
 ```
+
+### **Count the Occurrences of Each Character**
+
+**Write a function that takes a string and returns an object with the count of each character**
+Example:
+
+
+```bash
+console.log(countCharacters("hello")); 
+// Output: { h: 1, e: 1, l: 2, o: 1 }
+```
+
+Answer:
+
+```bash
+function countCharacters(str) {
+  let result = {};
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] in result) {
+      result[str[i]]++;
+    } else {
+      result[str[i]] = 1;
+    }
+  }
+  return result
+}
+```
+
+### **Find the Longest Word in a Sentence**
+
+**Write a function that takes a sentence and returns the longest word.**
+Example:
+
+
+```bash
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); 
+// Output: "jumped"
+```
+
+Answer:
+
+```bash
+function findLongestWord(sentence) {
+  let words = sentence.split(" ");
+  let result = "";
+  for (let word of words) {
+    if(word.length > result.length){
+      result = word
+    }
+  }
+  return result
+}
+
+```
+
+### **Capitalize the First Letter of Each Word**
+
+**Write a function that takes a sentence and returns the sentence with each word capitalized.**
+Example:
+
+
+```bash
+console.log(capitalizeWords("hello world! this is javascript.")); 
+// Output: "Hello World! This Is Javascript."
+```
+
+Answer:
+
+```bash
+function capitalizeWords(sentence) {
+  let words = sentence.split(" ");
+  let result = "";
+  for (let word of words) {
+    result = result + word.charAt(0).toUpperCase() + word.slice(1, word.length)+" ";
+  }
+  return result;
+}
+
+```
+
+### **Implement a Simple Debounce Function**
+
+**Write a function debounce(fn, delay) that ensures a function is called only after a specified delay, even if it’s invoked multiple times.**
+Example:
+
+
+```bash
+// Example usage:
+const logMessage = debounce(() => console.log("Hello!"), 2000);
+
+logMessage();
+logMessage();
+logMessage(); 
+// "Hello!" should be logged **only once** after 2 seconds.
+```
+
+Answer:
+
+```bash
+function debounce(fn, delay) {
+  let timeoutId;
+  return function (...args) {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+```
+
+### ** Find the Second Largest Number in an Array**
+
+**Write a function that takes an array of numbers and returns the second largest number.**
+Example:
+
+
+```bash
+console.log(secondLargest([10, 20, 4, 45, 99]));  
+// Output: 45
+
+console.log(secondLargest([5, 5, 5, 5]));  
+// Output: null (since there's no second distinct largest number)
+
+console.log(secondLargest([1, 2]));  
+// Output: 1
+```
+
+Answer:
+
+```bash
+function secondLargest(arr) {
+  let largest = -Infinity;
+  let secondLarge = -Infinity;
+  for (let elem of arr) {
+    if (elem > largest) {
+      secondLarge = largest;
+      largest = elem;
+    } else if (elem < largest && elem > secondLarge) {
+      secondLarge = elem;
+    }
+  }
+  if (secondLarge == -Infinity) {
+    secondLarge = null;
+  }
+  return secondLarge;
+}
+
+```
+
+### ****
+
+**Write a function that prints numbers from 1 to n with the following rules:**
+
+- Print "Fizz" for multiples of 3.
+- Print "Buzz" for multiples of 5.
+- Print "FizzBuzz" for multiples of both 3 and 5.
+- Print the number itself if none of the above conditions are met.
+Example:
+
+```bash
+fizzBuzz(15);
+
+/* Expected Output:
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+*/
+```
+
+Answer:
+
+```bash
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      console.log("FizzBuzz");
+      return;
+    } else if (i % 3 == 0) {
+      console.log("Fizz");
+    } else if (i % 5 == 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
+    }
+  }
+}
+```

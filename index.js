@@ -1,21 +1,34 @@
-let count = 0;
-function permutations(str) {
-  if (str.length == 1) {
-    return [str];
-  }
-
-  let result = [];
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    let remaining = str.slice(0, i) + str.slice(i + 1);
-    let permutation = permutations(remaining);
-    for (let perm of permutation) {
-      result.push(char + perm);
-      
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      console.log("FizzBuzz");
+      return;
+    } else if (i % 3 == 0) {
+      console.log("Fizz");
+    } else if (i % 5 == 0) {
+      console.log("Buzz");
+    } else {
+      console.log(i);
     }
   }
-  return result;
 }
 
-console.log(permutations("abcd"));
-// Output: ["abc", "acb", "bac", "bca", "cab", "cba"]
+fizzBuzz(15);
+
+/* Expected Output:
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+*/
