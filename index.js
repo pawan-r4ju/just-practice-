@@ -1,34 +1,19 @@
-function fizzBuzz(n) {
-  for (let i = 1; i <= n; i++) {
-    if (i % 3 == 0 && i % 5 == 0) {
-      console.log("FizzBuzz");
-      return;
-    } else if (i % 3 == 0) {
-      console.log("Fizz");
-    } else if (i % 5 == 0) {
-      console.log("Buzz");
-    } else {
-      console.log(i);
+const { log } = require("console");
+
+function customIndexOf(str, search) {
+  let temp = str;
+  let result = -1;
+  for (let i = 0; i < str.length; i++) {
+    temp = str;
+    if (temp.slice(i, search.length) == search) {
+      return (result = i + search.length);
     }
   }
+  return result;
 }
 
-fizzBuzz(15);
+console.log(customIndexOf("hello world", "world"));
+// Output: 6
 
-/* Expected Output:
-1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz
-*/
+console.log(customIndexOf("abcdef", "gh"));
+// Output: -1

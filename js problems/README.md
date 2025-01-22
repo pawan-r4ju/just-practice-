@@ -849,7 +849,7 @@ function secondLargest(arr) {
 
 ```
 
-### ****
+### **number game**
 
 **Write a function that prints numbers from 1 to n with the following rules:**
 
@@ -899,3 +899,521 @@ function fizzBuzz(n) {
   }
 }
 ```
+### **Find the Longest Palindromic Substring**
+
+**Write a function that finds the longest palindromic substring in a given string.**
+
+
+Example:
+
+```bash
+
+console.log(longestPalindrome("babad"));  
+// Output: "bab" or "aba" (both are valid)
+
+console.log(longestPalindrome("cbbd"));  
+// Output: "bb"
+```
+
+Answer:
+
+```bash
+function longestPalindrome(s) {
+  let result = "";
+  let allSubs = [];
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i; j <= s.length; j++) {
+      if (s.slice(i, j) != "" && !allSubs.includes(s.slice(i, j))) {
+        allSubs.push(s.slice(i, j));
+      }
+    }
+  }
+  for (let elem of allSubs) {
+    if (
+      elem == elem.split("").reverse().join("") &&
+      elem.length >= result.length
+    ) {
+      result = elem;
+    }
+  }
+  return result;
+}
+```
+
+### **Convert a Sentence to Camel Case**
+
+**Write a function that converts a given sentence into camel case format.**
+
+
+Example:
+
+```bash
+console.log(toCamelCase("hello world example"));  
+// Output: "helloWorldExample"
+
+console.log(toCamelCase("this is a test case"));  
+// Output: "thisIsATestCase"
+```
+
+Answer:
+
+```bash
+function toCamelCase(sentence) {
+  let words = sentence.split(" ");
+  let result = [words[0]];
+  for (let i = 1; i < words.length; i++) {
+    let word = words[i].charAt(0).toUpperCase()+words[i].slice(1,words[i].length)
+    result.push(word)
+
+  }
+  return result.join("")
+}
+```
+
+
+### **Find the Maximum Difference Between Two Elements in an Array**
+
+**Given an array of numbers, find the maximum difference between any two elements where the larger number appears after the smaller number.**
+
+
+Example:
+
+```bash
+console.log(maxDifference([7, 1, 5, 3, 6, 4]));  
+// Output: 5 (Buy at 1, sell at 6)
+
+console.log(maxDifference([9, 4, 3, 2]));  
+// Output: -1 (No profit possible)
+```
+
+Answer:
+
+```bash
+function maxDifference(arr) {
+  let minprice  = arr[0];
+  let maxDiff = -1
+  for(let elem of arr){
+    if (elem>minprice) {
+      maxDiff = Math.max(maxDiff,elem - minprice)
+      
+    }else{
+      minprice = elem
+    }
+  }
+  return maxDiff
+}
+```
+
+
+### **Rotate an Array to the Right by K Steps**
+
+**Write a function that rotates an array to the right by k steps.**
+
+
+Example:
+
+```bash
+console.log(rotateArray([1, 2, 3, 4, 5], 2));  
+// Output: [4, 5, 1, 2, 3]
+
+console.log(rotateArray([0, -1, -2], 1));  
+// Output: [-2, 0, -1]
+```
+
+Answer:
+
+```bash
+function rotateArray(arr, k) {
+  if (k >= arr.length) {
+    k = k % arr.length;
+  }
+  let arr1 = arr.slice(0,k+1)
+  let arr2 = arr.slice(k+1,arr.length)
+  return arr = [...arr2,...arr1]
+}
+```
+
+
+### **Find the First Recurring Character in a String**
+
+**Write a function that finds the first recurring character in a given string. If no character repeats, return null.**
+
+
+Example:
+
+```bash
+console.log(firstRecurringCharacter("abca"));  
+// Output: "a"
+
+console.log(firstRecurringCharacter("abcdef"));  
+// Output: null
+```
+
+Answer:
+
+```bash
+function firstRecurringCharacter(str) {
+  let charCount = {};
+  let recChar = "";
+  for (let char of str) {
+    if (char in charCount) {
+      charCount[char]++;
+      return (recChar = recChar + char);
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  return recChar || null;
+}
+```
+
+
+### **Find the First Non-Repeating Character**
+
+**Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.**
+
+
+Example:
+
+```bash
+
+console.log(firstNonRepeatingChar("aabccde"));  
+// Output: "b"
+
+console.log(firstNonRepeatingChar("aabbcc"));  
+// Output: null
+```
+
+Answer:
+
+```bash
+function firstNonRepeatingChar(str) {
+  let charCount = {};
+  let result = "";
+  for (char of str) {
+    if (char in charCount) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
+    }
+  }
+  for (let key in charCount) {
+    if (charCount[key] < 2) {
+      return (result += key);
+    }
+  }
+  return result || null;
+}
+```
+### ** Implement a Custom indexOf Method**
+
+**Write a function that mimics the behavior of the built-in indexOf() method without using it. It should return the first occurrence index of a substring in a string or -1 if not found.**
+
+
+Example:
+
+```bash
+console.log(customIndexOf("hello world", "world"));  
+// Output: 6
+
+console.log(customIndexOf("abcdef", "gh"));  
+// Output: -1
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+### ****
+
+****
+
+
+Example:
+
+```bash
+
+```
+
+Answer:
+
+```bash
+
+```
+
+
+
