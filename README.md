@@ -392,7 +392,7 @@ HTTP Response Status Codes
     │       ├── 405 Method Not Allowed  // The HTTP method used is not allowed for the resource
     │       ├── 408 Request Timeout     // The server timed out waiting for the request
     │       └── 429 Too Many Requests   // The client has sent too many requests in a given amount of time
-    ├── 5xx (Server Error)               // Server-side errors (server's fault)
+    ├── 5xx (Server Error)(INBSG)               // Server-side errors (server's fault)
     │       ├── 500 Internal Server Error // A generic error indicating server failure
     │       ├── 501 Not Implemented      // The server does not support the functionality required to fulfill the request
     │       ├── 502 Bad Gateway         // The server, while acting as a gateway, received an invalid response from the upstream server
