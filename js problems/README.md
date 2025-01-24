@@ -1138,24 +1138,49 @@ function customIndexOf(str, search) {
 }
 ```
 
-### ****
+### **Find the Largest Sum of Contiguous Subarray (Kadane’s Algorithm)**
 
-****
+**Write a function to find the largest sum of any contiguous subarray in a given array.**
 
 
 Example:
 
 ```bash
+console.log(maxSubarraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// Output: 6 (Subarray: [4, -1, 2, 1])
 
+console.log(maxSubarraySum([1, 2, 3, -2, 5]));
+// Output: 9 (Subarray: [1, 2, 3, -2, 5])
 ```
 
 Answer:
 
 ```bash
-
+function maxSubarraySum(arr) {
+  let curSum = arr[0];
+  let maxSum = arr[0];
+  let start = 0,
+    end = 0,
+    tempstart = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (curSum + arr[i] > arr[i]) {
+      curSum += arr[i];
+    } else {
+      curSum = arr[i];
+      tempstart = i;
+    }
+    if (curSum > maxSum) {
+      maxSum = curSum;
+      start = tempstart;
+      end = i;
+    }
+  }
+  let result = arr.slice(start, end + 1);
+  return { maxSum, result };
+}
 ```
 
-### ****
+### **Check if a String is a Valid Palindrome**
 
 ****
 

@@ -1,19 +1,28 @@
-function customIndexOf(str, search) {
-  for (let i = 0; i <= str.length - search.length; i++) {
-    let found = true;
-    for (let j = 0; j < search.length; j++) {
-      if (str[i + j] !== search[j]) {
-        found = false;
-        break;
-      }
+function maxSubarraySum(arr) {
+  let curSum = arr[0];
+  let maxSum = arr[0];
+  let start = 0,
+    end = 0,
+    tempstart = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (curSum + arr[i] > arr[i]) {
+      curSum += arr[i];
+    } else {
+      curSum = arr[i];
+      tempstart = i;
     }
-    if (found) return i;
+    if (curSum > maxSum) {
+      maxSum = curSum;
+      start = tempstart;
+      end = i;
+    }
   }
-  return -1;
+  let result = arr.slice(start, end + 1);
+  return { maxSum, result };
 }
 
-console.log(customIndexOf("hello world", "world"));
-// Output: 6
+console.log(maxSubarraySum([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// Output: 6 (Subarray: [4, -1, 2, 1])
 
-console.log(customIndexOf("abcdef", "gh"));
-// Output: -1
+console.log(maxSubarraySum([1, 2, 3, -2, 5]));
+// Output: 9 (Subarray: [1, 2, 3, -2, 5])
