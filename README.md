@@ -16,7 +16,6 @@ JavaScript Data Types
                 ├── Function       # A block of code that can be invoked (object type)
                 │       └── class  # A template for creating objects, special type of function
                 └── Date           # Represents date and time
-
 --------------------------------------------------------------------------------------------------
 JavaScript Control Statements
     ├── Conditional Statements   // Used for decision-making
