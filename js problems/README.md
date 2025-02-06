@@ -1182,19 +1182,37 @@ function maxSubarraySum(arr) {
 
 ### **Check if a String is a Valid Palindrome**
 
-****
+**Write a function that checks if a given string is a valid palindrome, ignoring spaces, punctuation, and case sensitivity.**
 
 
 Example:
 
 ```bash
+console.log(isValidPalindrome("A man, a plan, a canal, Panama"));  
+// Output: true
 
+console.log(isValidPalindrome("hello"));  
+// Output: false
 ```
 
 Answer:
 
 ```bash
+function isValidPalindrome(str) {
+  let check = "abcdefghijklmnopqrstuvwxyz";
+  let lowerStr = str.toLowerCase();
+  let allChar = [];
+  let compare = [];
 
+  for (let i = 0; i < lowerStr.length; i++) {
+    if (check.includes(lowerStr[i])) {
+      compare.push(lowerStr[i]);
+      allChar.unshift(lowerStr[i]);
+    }
+  }
+  if (allChar.join("") === compare.join('')) return true;
+  return false
+}
 ```
 
 ### ****
