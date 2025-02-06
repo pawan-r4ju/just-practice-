@@ -1223,7 +1223,25 @@ function isValidPalindrome(str) {
 Example:
 
 ```bash
+function stringGroup(str, k) {
+  let tempStr = "";
+  let arr = [];
+  for (let char of str) {
+    if (tempStr.length < k) {
+      tempStr = tempStr + char;
+    } else {
+      arr.push(tempStr);
+      tempStr = char;
+    }
+  }
+  if (tempStr) {
+    arr.push(tempStr + "_".repeat(k - tempStr.length));
+  }
+  return arr;
+}
 
+let str = "pawan is an men and";
+console.log(stringGroup(str, 5));
 ```
 
 Answer:
